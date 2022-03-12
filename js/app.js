@@ -1,12 +1,10 @@
 "use strict";
-
 window.onload=function(){
     let task = document.querySelector(".BOX2");
 
     let list = document.querySelector(".line");
 
     let addTask = document.querySelector(".btn");
-
 
     addTask.addEventListener("click" , ()=>{
 
@@ -25,11 +23,7 @@ window.onload=function(){
         deleteTask.forEach(del =>{
 
             del.addEventListener("click" , ()=>{
-
                 del.parentElement.remove();
-
             })
-
         })
-
     })}

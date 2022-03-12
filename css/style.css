@@ -16,6 +16,8 @@ body {
     height: 100vh;
 
     display: grid;
+    display: -moz-inline-stack!important;
+
 
     background-color: #f6c4c4;
     flex-direction: row;
@@ -26,7 +28,7 @@ body {
 
 .BOX {
 
-    height: 50vh;
+    height: 90vh;
 
     width: 40vh;
 
@@ -36,7 +38,7 @@ body {
     resize: horizontal;
 }
 
-.BOX1{
+.BOX1.todo{
 
     height: 15%;
 
@@ -46,6 +48,26 @@ body {
 
     color: #fff;
 
+    font-size: 130%;
+    display: grid;
+
+    place-items: center;
+    /*align-items: center;*/
+
+}
+
+.BOX1.notdone{
+
+    position: absolute;
+    height: 15%;
+
+    width: 100%;
+
+    background: #5f5fe8;
+
+    color: #fff;
+
+    font-size: 130%;
     display: grid;
 
     place-items: center;
@@ -82,8 +104,13 @@ body {
     padding: 0 5%;
 
     color: #2d0202;
+    child-align: left;
 
 
+}
+.notdone{
+    background-color: #e85fa8;
+    top: 50% !important;
 }
 
 .BOX2::placeholder {
@@ -110,6 +137,12 @@ body {
 
     overflow: auto;
 
+}
+
+.line.notdone{
+    perspective-origin: initial!important;
+    position: absolute!important;
+    top: 70% !important;
 }
 
 .line li {
@@ -185,8 +218,7 @@ body {
 }
 
 
-
-.btn{
+.btn.todo{
 
     height: 10%;
 
@@ -226,5 +258,36 @@ body {
     font-size: 90%;
 
     border-radius: 25%;
+}
 
+/* Splits the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* left side */
+.left {
+    left: 0;
+    background-color: #151556;
+}
+
+/* right side */
+.right {
+    right: 0;
+    background-color: #f6c4c4;
+}
+
+/* Content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
