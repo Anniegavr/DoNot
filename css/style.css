@@ -25,7 +25,6 @@ body {
 
 }
 
-
 .BOX, .BOX_1{
 
     height: 90vh;
@@ -75,6 +74,9 @@ body {
 
 }
 
+.BOX1_1{
+    background: #a9075d!important;
+}
 /* The text input area */
 .BOX2, .BOX2_1{
     align-items: center;
@@ -109,7 +111,7 @@ body {
 
 }
 
-.BOX2::placeholder {
+.BOX2::placeholder BOX2_1::placeholder {
 
     /* the ADD TASK text */
     color: #595998;
@@ -153,6 +155,24 @@ body {
 
 }
 
+.line_1 li {
+
+    height: 30%;
+
+    width: 100%;
+
+    margin: 1% 0;
+
+    position: relative;
+
+    left: 0;
+
+    border: .1vh solid #1f3148;
+
+    overflow: hidden;
+
+}
+
 .line li h4 {
 
     height: 90%;
@@ -177,7 +197,57 @@ body {
 
 }
 
-.line li .deleteTask {
+.line_1 li h4 {
+
+    height: 90%;
+
+    width: 100%;
+
+    padding: 0 9%;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #1f3148;
+
+    overflow: hidden;
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+}
+
+.line li .deleteTask{
+
+    height: 100%;
+
+    width: 20%;
+
+    z-index: 999;
+
+    display: grid;
+
+    place-items: center;
+
+    position: absolute;
+
+    right: -60%;
+
+    background: #ff4444 !important;
+
+    color: #e2e2e2;
+
+    transition: 0.7s all ease-in-out;
+
+    cursor: pointer;
+
+}
+
+.line_1 li .deleteTask_1{
 
     height: 100%;
 
@@ -206,7 +276,9 @@ body {
 .line li:hover .deleteTask {
     right: 0;
 }
-
+.line_1 li:hover .deleteTask_1 {
+    right: 0;
+}
 
 .btn, .btn_1{
 
@@ -237,13 +309,13 @@ body {
 
 }
 
-.btn:hover{
+.btn:hover .btn_1:hover{
 
     background: transparent;
 
-    border: .3vh solid #ff4444;
+    border: .3vh solid #ff4444 !important;
 
-    color: red;
+    color: red !important;
 
     font-size: 90%;
 
@@ -255,7 +327,7 @@ body {
     height: 100%;
     width: 50%;
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
@@ -280,4 +352,47 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.dragbox {
+    cursor: move;
+}
+
+.form-input {
+    width:available;
+    padding:2%;
+    /*background-image: image("images/free-attachment-icon-1483-thumb.png");*/
+    box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377),
+    3px 3px 7px rgba(94, 104, 121, 0.377);
+}
+.form-input input {
+    display:none;
+    width: available;
+
+}
+.form-input label {
+    display: inherit;
+    width:100%;
+    height: 100%;
+    font-size: xx-large;
+    text-align: -moz-center;
+
+    color: #5f5fe8;
+    cursor:pointer;
+    height: 5%;
+    width: 20%;
+
+    border-radius: 45%;
+    border-style: dotted;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.form-input img {
+    height: 7%;
+    width: content-box;
+    display: none;
+
+    /*margin-bottom:30vh;*/
 }

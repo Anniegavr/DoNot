@@ -10,11 +10,21 @@
   <body>
   <div class="split left">
     <div class="centered">
-      <div class="BOX">
-        <h1 class="BOX1">TO NOT DO</h1>
+      <div class="BOX ">
+        <h1 class="BOX1 ">TO NOT DO</h1>
         <label about="task description">
-          <input type="text" placeholder="Enter Your Task" class="BOX2">
+          <input type="text" placeholder="Enter Your Task" class="BOX2" id="taskText">
         </label>
+
+        <div class="form-input">
+          <div class="preview">
+            <img id="file-ip-1-preview">
+          </div>
+          <label for="file-ip-1">📎</label>
+
+          <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+
+        </div>
         <ul class="line">
         </ul>
         <button class="btn" onclick="addToList()">ADD</button>
