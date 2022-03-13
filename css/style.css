@@ -26,7 +26,7 @@ body {
 }
 
 
-.BOX {
+.BOX, .BOX_1{
 
     height: 90vh;
 
@@ -38,7 +38,7 @@ body {
     resize: horizontal;
 }
 
-.BOX1.todo{
+.BOX1, .BOX1_1{
 
     height: 15%;
 
@@ -56,7 +56,7 @@ body {
 
 }
 
-.BOX1.notdone{
+.BOX1, .BOX1_1{
 
     position: absolute;
     height: 15%;
@@ -76,7 +76,7 @@ body {
 }
 
 /* The text input area */
-.BOX2{
+.BOX2, .BOX2_1{
     align-items: center;
 
     font-size: 100%;
@@ -108,10 +108,6 @@ body {
 
 
 }
-.notdone{
-    background-color: #e85fa8;
-    top: 50% !important;
-}
 
 .BOX2::placeholder {
 
@@ -120,7 +116,7 @@ body {
 
 }
 
-.line{
+.line, .line_1{
 
     position: absolute;
 
@@ -137,12 +133,6 @@ body {
 
     overflow: auto;
 
-}
-
-.line.notdone{
-    perspective-origin: initial!important;
-    position: absolute!important;
-    top: 70% !important;
 }
 
 .line li {
@@ -218,7 +208,7 @@ body {
 }
 
 
-.btn.todo{
+.btn, .btn_1{
 
     height: 10%;
 
