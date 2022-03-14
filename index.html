@@ -14,17 +14,9 @@
         <h1 class="BOX1 ">TO NOT DO</h1>
         <label about="task description">
           <input type="text" placeholder="Enter Your Task" class="BOX2" id="taskText">
+          <input type="text" placeholder="Enter Your Image URL" class="BOX2" id="imageAtt">
         </label>
 
-        <div class="form-input">
-          <div class="preview">
-            <img id="file-ip-1-preview">
-          </div>
-          <label for="file-ip-1">📎</label>
-
-          <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
-
-        </div>
         <ul class="line">
         </ul>
         <button class="btn" onclick="addToList()">ADD</button>
@@ -34,14 +26,15 @@
 
   <div class="split right">
     <div class="centered">
-      <div class="BOX_1">
-        <h1 class="BOX1_1">NOT DONE</h1>
+      <div class="BOX" id="newBox">
+        <h1 class="BOX1" id="newBox1">NOT DONE</h1>
         <label about="task description">
-          <input type="text" placeholder="Enter Your Task" class="BOX2_1">
+          <input type="text" placeholder="Enter Your Task" class="BOX2" id="newBox2">
+          <input type="text" placeholder="Enter Your Image URL" class="BOX2" id="imageAtt2">
         </label>
-        <ul class="line_1">
+        <ul class="line_1 line" id="line2">
         </ul>
-        <button class="btn_1" onclick="addToList2()">ADD</button>
+        <button class="btn" id="btn2" onclick="addToList2()">ADD</button>
       </div>
     </div>
   </div>

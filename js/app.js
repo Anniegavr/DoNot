@@ -1,154 +1,151 @@
 "use strict";
-
+let count = 0;
 function addToList(){
-    let task = document.querySelector(".BOX2");
+    let task = document.querySelector("#taskText");
 
     let list = document.querySelector(".line");
 
-    let addTask = document.querySelector(".btn");
-    let attachFile = document.querySelector(".attach")
-    // let imgUpload = document.querySelector(".attach");
+    // let addTask = document.querySelector(".btn");
+    let urlImg = document.querySelector("#imageAtt");
+    let input = document.createElement("input");
+    input.type="checkbox";
+    let liEl = document.createElement("li");
+    liEl.id = count;
+    let iEl = document.createElement("i");
+    iEl.className = "fas fa-trash-alt deleteTask dragbox";
+    let h4El = document.createElement("h4");
+    h4El.innerHTML=task.value;
+    let imgEl = document.createElement("img");
+    imgEl.src=urlImg.value;
 
+    input.onclick=function inp(el){
+        let selected = document.getElementById(count);
+        let rightList = document.querySelector(".line_1");
+        rightList.appendChild(liEl);
 
-    addTask.addEventListener("click" , ()=>{
+        // rightList.appendChild();
+        console.log(selected);
 
-        list.insertAdjacentHTML(`afterbegin` , `<li class="container">
-                <!--                here comes the task-->
-                <i draggable="true" class="fas fa-trash-alt deleteTask " ></i> 
+        // liEl.remove();
+    }
+    liEl.appendChild(input);
+    liEl.appendChild(iEl);
+    liEl.appendChild(h4El);
+    liEl.appendChild(imgEl);
+    list.appendChild(liEl);
 
-                <h4 draggable="true" class="dragbox">${task.value}</h4>
-                
-            </licontainer>`);
+    count +=1;
+    task.value = "";
 
-        task.value = "";
+    let deleteTask = document.querySelectorAll(".deleteTask");
 
-        let deleteTask = document.querySelectorAll(".deleteTask");
+    deleteTask.forEach(del =>{
 
-        deleteTask.forEach(del =>{
-
-            del.addEventListener("click" , ()=>{
-                del.parentElement.remove();
-            })
-        })
-    })
-}
-
-function showPreview(event) {
-    let task = document.querySelector(".BOX2");
-
-    let list = document.querySelector(".line");
-
-    let attachFile = document.querySelector("#file-ip-1")
-    // let imgUpload = document.querySelector(".attach");
-
-    attachFile.addEventListener("click" , ()=>{
-        if (event.target.files.length > 0) {
-            var src = URL.createObjectURL(event.target.files[0]);
-            var preview = document.getElementById("file-ip-1-preview");
-            
-            preview.src = src;
-            preview.style.display = "block";
-            list.insertAdjacentHTML(`afterbegin` , `<li class="container">
-                <!--                here comes the task-->
-                <i draggable="true" class="fas fa-trash-alt deleteTask" ><picture><source srcset="src"></picture></i>
-                
-            </licontainer>`);
-        }
-
-            
-
-        task.value = "";
-
-        let deleteTask = document.querySelectorAll(".deleteTask");
-
-        deleteTask.forEach(del =>{
-
-            del.addEventListener("click" , ()=>{
-                del.parentElement.remove();
-            })
+        del.addEventListener("click" , ()=>{
+            del.parentElement.remove();
         })
     })
 
 }
-    function addToList2(){
-    let task = document.querySelector(".BOX2_1");
 
-    let list = document.querySelector(".line_1");
+function addToList2(){
 
-    let addTask = document.querySelector(".btn_1");
+    let task1 = document.querySelector("#newBox2");
 
-    addTask.addEventListener("click" , ()=>{
+    let list1 = document.querySelector("line_1");
 
-        list.insertAdjacentHTML(`afterbegin` , `<li ondragend="dragOver()">
-    
-                <i draggable="true" class="fas fa-trash-alt deleteTask_1 dragbox"></i>
-                
-                <h4 draggable="true" style="text-decoration: line-through">${task.value}</h4>
-                
-            </li>`);
+    let urlImg = document.querySelector("#imageAtt2");
+    // let input = document.createElement("input");
+    // input.type="checkbox";
+    let liEl1 = document.createElement("li");
+    liEl1.id = count;
+    let iEl1 = document.createElement("i");
+    iEl1.className = "fas fa-trash-alt deleteTask dragbox";
+    let h4El1 = document.createElement("h4");
+    h4El1.innerHTML=task1.value;
+    let imgEl1 = document.createElement("img");
+    imgEl1.src=urlImg.value;
 
-        task.value = "";
+    //
+    // input.onclick=function inp(el){
+    //     let selected = document.getElementById(count);
+    //     let rightList = document.querySelector("line");
+    //     rightList.appendChild(liEl);
+    //
+    //     // rightList.appendChild();
+    //     console.log(selected);
+    //
+    //     // liEl.remove();
+    // }
+    liEl1.appendChild(input);
+    liEl1.appendChild(iEl1);
+    liEl1.appendChild(h4El1);
+    liEl1.appendChild(imgEl1);
+    list1.appendChild(liEl1);
 
-        let deleteTask = document.querySelectorAll(".deleteTask_1");
 
-        deleteTask.forEach(del =>{
+    task1.value = "";
 
-            del.addEventListener("click" , ()=>{
-                del.parentElement.remove();
-            })
+    let deleteTask = document.querySelectorAll(".deleteTask2");
+
+    deleteTask.forEach(del =>{
+
+        del.addEventListener("click" , ()=>{
+            del.parentElement.remove();
         })
-    });
+    })
+
 }
 
-
-/* draggable element */
-const item = document.querySelector('.item');
-
-item.addEventListener('dragstart', dragStart);
-
-function dragStart(e) {
-    e.dataTransfer.setData('text/plain', e.target.id);
-    setTimeout(() => {
-        e.target.classList.add('hide');
-    }, 0);
-}
-
-
-/* drop targets */
-const boxes = document.querySelectorAll('.dragbox');
-
-boxes.forEach(box => {
-    box.addEventListener('dragenter', dragEnter)
-    box.addEventListener('dragover', dragOver);
-    box.addEventListener('dragleave', dragLeave);
-    box.addEventListener('drop', drop);
-});
-
-
-function dragEnter(e) {
-    e.preventDefault();
-    e.target.classList.add('drag-over');
-}
-
-function dragOver(e) {
-    e.preventDefault();
-    e.target.classList.add('drag-over');
-}
-
-function dragLeave(e) {
-    e.target.classList.remove('drag-over');
-}
-
-function drop(e) {
-    e.target.classList.remove('drag-over');
-
-    // get the draggable element
-    const id = e.dataTransfer.getData('text/plain');
-    const draggable = document.getElementById(id);
-
-    // add it to the drop target
-    e.target.appendChild(draggable);
-
-    // display the draggable element
-    draggable.classList.remove('hide');
-}
+//
+// /* draggable element */
+// const item = document.querySelector('.item');
+//
+// item.addEventListener('dragstart', dragStart);
+//
+// function dragStart(e) {
+//     e.dataTransfer.setData('text/plain', e.target.id);
+//     setTimeout(() => {
+//         e.target.classList.add('hide');
+//     }, 0);
+// }
+//
+//
+// /* drop targets */
+// const boxes = document.querySelectorAll('.dragbox');
+//
+// boxes.forEach(box => {
+//     box.addEventListener('dragenter', dragEnter)
+//     box.addEventListener('dragover', dragOver);
+//     box.addEventListener('dragleave', dragLeave);
+//     box.addEventListener('drop', drop);
+// });
+//
+//
+// function dragEnter(e) {
+//     e.preventDefault();
+//     e.target.classList.add('drag-over');
+// }
+//
+// function dragOver(e) {
+//     e.preventDefault();
+//     e.target.classList.add('drag-over');
+// }
+//
+// function dragLeave(e) {
+//     e.target.classList.remove('drag-over');
+// }
+//
+// function drop(e) {
+//     e.target.classList.remove('drag-over');
+//
+//     // get the draggable element
+//     const id = e.dataTransfer.getData('text/plain');
+//     const draggable = document.getElementById(id);
+//
+//     // add it to the drop target
+//     e.target.appendChild(draggable);
+//
+//     // display the draggable element
+//     draggable.classList.remove('hide');
+// }
