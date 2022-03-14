@@ -26,9 +26,8 @@ body {
 }
 
 .BOX{
-
     height: 90vh;
-
+    border-radius: 45px;
     width: 40vh;
 
     background: #ffffff;
@@ -37,28 +36,29 @@ body {
     resize: horizontal;
 }
 
-.BOX1{
+/*.BOX1{*/
+/*    height: 15%;*/
 
+/*    width: 100%;*/
+
+/*    background: #ff4444;*/
+
+/*    color: #fff;*/
+
+/*    font-size: 130%;*/
+/*    display: grid;*/
+
+/*    place-items: center;*/
+/*    !*align-items: center;*!*/
+
+/*}*/
+
+.BOX1{
     height: 15%;
 
     width: 100%;
 
-    background: #ff4444;
-
-    color: #fff;
-
-    font-size: 130%;
-    display: grid;
-
-    place-items: center;
-    /*align-items: center;*/
-
-}
-
-.BOX1{
-    height: 15%;
-
-    width: 100%;
+    border-radius: 45px 0 45px;
 
     background: #5f5fe8;
 
@@ -162,37 +162,26 @@ body {
     color: #1f3148;
     left: 0;
     top: 0;
+}
+li:hover{
+    background: transparent;
+    border: .3vh solid #ff4444 !important;
 
+    color: red !important;
+    resize: both;
+    font-size: 90%;
+    border-radius: 25%;
 }
 
 
 .line_1 li h4 {
-
-    height: 90%;
-
-    width: 100%;
-
-    padding: 0 ;
-
-    display: flex;
-
-    /*align-items: ;*/
-
-    color: #1f3148;
-
-    overflow: hidden;
-
-    /*position: absolute;*/
-
-    left: 0;
-
-    top: 0;
-
+    text-decoration: line-through;
 }
 
 .line li .deleteTask{
 
-    height: 100%;
+    height: 110%;
+    border-radius: 25px;
 
     width: 20%;
 
@@ -216,34 +205,28 @@ body {
 
 }
 
-.line_1 li .deleteTask_1{
-
-    height: 100%;
-
+.deleteTask_1{
+    border-radius: 45px 45px 25px 25px;
+    height: 110%;
     width: 20%;
-
     z-index: 999;
 
     display: grid;
 
     place-items: center;
-
     position: absolute;
-
     right: -60%;
-
     background: #ff4444;
-
     color: #e2e2e2;
-
     transition: 0.7s all ease-in-out;
-
     cursor: pointer;
 
 }
 
+
 .line li:hover .deleteTask {
     right: 0;
+
 }
 .line_1 li:hover .deleteTask_1 {
     right: 0;
@@ -251,8 +234,7 @@ body {
 
 .btn{
 
-
-    height: 10%;
+    height: 40px;
     width: 20%;
     /*position: absolute;*/
     left: 40%;
@@ -268,16 +250,13 @@ body {
 
 }
 
-.btn:hover .btn_1:hover{
-
+.btn:hover{
     background: transparent;
-
     border: .3vh solid #ff4444 !important;
 
     color: red !important;
 
     font-size: 90%;
-
     border-radius: 25%;
 }
 
@@ -313,16 +292,12 @@ body {
     text-align: center;
 }
 
-.dragbox {
-    cursor: move;
-}
-
-.attach{
-    position: absolute;
-    right: 2%;
-    width: 20%;
-    top: 20%;
-}
+/*.attach{*/
+/*    position: absolute;*/
+/*    right: 2%;*/
+/*    width: 20%;*/
+/*    top: 20%;*/
+/*}*/
 
 .line img{
     height: 50px;
